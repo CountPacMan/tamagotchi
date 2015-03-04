@@ -11,21 +11,19 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
 
     $app->get("/", function() use ($app) {
+        $_SESSION['tamagotchi'] = [];
         return $app['twig']->render('home.php');
     });
 
     $app->post("/creature", function() use ($app) {
-
         if(empty($_SESSION['tamagotchi']))
         {
+            echo "Is Empty";
             $creature = new Tamagotchi($_POST['weight']);
             $creature->save();
         }
 
-        
-
-
-        $app['twig']->render('creature.php', array('creature' => Tamagotchi::getCreature()));
+        return $app['twig']->render('creature.php', array('creature' => Tamagotchi::getCreature()));
     });
 
 
