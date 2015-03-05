@@ -65,15 +65,15 @@ class Tamagotchi
     {
         if ($this->food == 0) {
             return "hunger";
-        } else if ($this->mood == 0) {
+        } elseif ($this->mood <= 0) {
             return "suicide";
-        } else if ($this->rest == 0) {
+        } elseif ($this->rest == 0) {
             return "sleep deprivation";
-        } else if ($this->food == 10) {
+        } elseif ($this->food == 10) {
             return "exploded";
-        } else if ($this->rest == 10) {
+        } elseif ($this->rest == 10) {
             return "going into permanent coma";
-        } else if ($this->mood == 10) {
+        } elseif ($this->mood == 10) {
             return "exploded from happiness";
         } else {
             return "alive";
