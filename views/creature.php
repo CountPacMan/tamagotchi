@@ -17,6 +17,8 @@
             <p>
                 Happiness: {{ creature[0].getMood }}
             </p>
+            <button name="time" type="submit">Leave me Alone!</button>
+            <button name="kick" type="submit">Don't kick me!</button>
         </form>
     </body>
 </html>
